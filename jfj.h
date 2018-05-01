@@ -18,7 +18,7 @@ typedef struct	gddhs_list
 	const char		*func;
 }				gddht_list;
 
-void	push_front(gddht_list **lst, size_t size, const char *file, int line, const char *func, void *p);
+void	jfj_push_front(gddht_list **lst, size_t size, const char *file, int line, const char *func, void *p);
 int		find_and_free(gddht_list **lst, void *p);
 void	*my_malloc(size_t size, const char *file, int line, const char *func);
 void	*my_ft_memalloc(size_t size, const char *file, int line, const char *func);

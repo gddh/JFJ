@@ -29,7 +29,7 @@ void	*my_malloc(size_t size, const char *file, int line, const char *func)
 {
 	void *p = malloc(size);
 	printf("Need to Free: %s, %i, %s, %p[%li]\n", file, line, func, p, size);
-	push_front(&list, size, file, line, func, p);
+	jfj_push_front(&list, size, file, line, func, p);
 	return (p);
 }
 
@@ -37,7 +37,7 @@ void	*my_malloc(size_t size, const char *file, int line, const char *func)
 //{
 //	void *p = ft_memalloc(size);
 //	printf("Need to Free: %s, %i, %s, %p[%li]\n", file, line, func, p, size);
-//	push_front(&list, size, file, line, func, p);
+//	jfj_push_front(&list, size, file, line, func, p);
 //	return (p);
 //}
 
@@ -62,7 +62,7 @@ gddht_list	*create_new(size_t size, const char *file, int line, const char *func
 	return (tmp);
 }
 
-void	push_front(gddht_list **lst, size_t size, const char *file, int line, const char *func, void *p)
+void	jfj_push_front(gddht_list **lst, size_t size, const char *file, int line, const char *func, void *p)
 {
 	gddht_list *tmp;
 
