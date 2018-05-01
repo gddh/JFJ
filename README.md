@@ -12,7 +12,8 @@ Wrote a short program to help identify memory leaks.
 4. If you are using libft, go into jfj.h and jfj.c and uncomment the ```#include "libft/libft.h"```
     - uncomment the relevant functions that are mallocing. If you do not know just run jfj as is and it should tell you which ft_functions use malloc.
 5. Add jfj.c or jfj.o to your Makefile
-6. make and execute.
+6. Add ```leaks();``` to the end of your file.
+7. make and execute.
 
 ## Just trying JFJ?
 1. clone the repo
