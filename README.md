@@ -22,7 +22,7 @@ Wrote a short program to help identify memory leaks.
 
 # Supporting
 1. ```malloc```
-2. ```memalloc```
+2. ```ft_memalloc```
 
 # Bugs?
 Find me on 42slack: delin
