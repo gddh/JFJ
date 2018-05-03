@@ -1,8 +1,9 @@
 #include "jfj.h"
- //#include "libft/libft.h"
+//#include "libft/libft.h"
 #undef malloc
 #undef free
 #undef ft_memalloc
+#undef ft_strnew
 
 /* Don't edit this line */
 gddht_list *list = NULL;
@@ -32,6 +33,15 @@ void	*my_malloc(size_t size, const char *file, int line, const char *func)
 	jfj_push_front(&list, size, file, line, func, p);
 	return (p);
 }
+
+char	*my_ft_strnew(size_t size, const char *file, int line, const char *func)
+{
+	char *p = ft_strnew(size);
+	printf("Need to Free: %s, %i, %s, %p[%li]\n", file, line, func, p, size);
+	jfj_push_front(&list, size, file, line, func, p);
+	return (p);
+}
+
 
 //void	*my_ft_memalloc(size_t size, const char *file, int line, const char *func)
 //{
