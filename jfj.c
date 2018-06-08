@@ -4,6 +4,9 @@
 #undef free
 #undef ft_memalloc
 #undef ft_strnew
+#undef ft_strdup
+#undef ft_strjoin
+#undef ft_strsub
 
 /* Don't edit this line */
 gddht_list *list = NULL;
@@ -42,6 +45,32 @@ char	*my_ft_strnew(size_t size, const char *file, int line, const char *func)
 	return (p);
 }
 
+char	*my_ft_strdup(char *src, const char *file, int line, const char *func)
+{
+	char *p = ft_strdup(src);
+	int size = strlen(src);
+	printf("Need to Free: %s, %i, %s, %p[%i]\n", file, line, func, p, size);
+	jfj_push_front(&list, size, file, line, func, p);
+	return (p);
+}
+
+char	*my_ft_strsub(char *src, unsigned int start, size_t len, const char *file, int line, const char *func)
+{
+	char *p = ft_strsub(src, start, len);
+	int size = strlen(src);
+	printf("Need to Free: %s, %i, %s, %p[%i]\n", file, line, func, p, size);
+	jfj_push_front(&list, size, file, line, func, p);
+	return (p);
+}
+
+char	*my_ft_strjoin(char *s1, char *s2, const char *file, int line, const char *func)
+{
+	char *p = ft_strjoin(s1, s2);
+	int size = strlen(s1) + strlen(s2);
+	printf("Need to Free: %s, %i, %s, %p[%i]\n", file, line, func, p, size);
+	jfj_push_front(&list, size, file, line, func, p);
+	return (p);
+}
 
 //void	*my_ft_memalloc(size_t size, const char *file, int line, const char *func)
 //{
@@ -111,10 +140,27 @@ int		find_and_free(gddht_list **lst, void *p)
 	return(0);
 }
 
-void	my_free(void *ptr)
+int		my_free(void *ptr)
 {
 	if (!find_and_free(&list, ptr))
+	{
 		printf("cannot find to free\n");
+		return (0);
+	}
+	return (1);
+}
+
+void	my_strdel(char **ptr)
+{
+	if (ptr) 
+	{
+		if (my_free(*ptr))
+			*ptr = NULL;
+		else 
+		{
+			printf("failed to free\n");
+		}
+	}
 }
 
 void	leaks()
