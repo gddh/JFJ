@@ -17,3 +17,4 @@ int		main(void)
     ft_strdel((void *)&ppp);
 	leaks();
 }
+//
