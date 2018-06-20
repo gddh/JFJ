@@ -13,6 +13,7 @@ int		main(void)
 	strcpy(pp, "abcdefg");
 	strcpy(ppp, "hi");
 	free(p);
-    ft_strdel(&pp);
+    ft_memdel((void *)&pp);
+    ft_strdel((void *)&ppp);
 	leaks();
 }

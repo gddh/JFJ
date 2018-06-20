@@ -149,7 +149,18 @@ int		my_free(void *ptr)
 	}
 	return (1);
 }
-
+void	my_memdel(void **ptr)
+{
+	if (ptr) 
+	{
+		if (my_free(*ptr))
+			*ptr = NULL;
+		else 
+		{
+			printf("failed to free\n");
+		}
+	}
+}
 void	my_strdel(char **ptr)
 {
 	if (ptr) 

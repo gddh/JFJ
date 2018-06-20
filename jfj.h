@@ -8,6 +8,7 @@
 #define malloc(X) my_malloc( X, __FILE__, __LINE__, __FUNCTION__)
 #define free(X) my_free(X)
 #define ft_strdel(X) my_strdel(X)
+#define ft_memdel(X) my_memdel(X)
 #define ft_memalloc(X) my_ft_memalloc( X, __FILE__, __LINE__, __FUNCTION__)
 #define ft_strnew(X) my_ft_strnew( X, __FILE__, __LINE__, __FUNCTION__)
 #define ft_strdup(X) my_ft_strdup( X, __FILE__, __LINE__, __FUNCTION__)
@@ -36,6 +37,7 @@ char	*my_ft_strsub(char *s, unsigned int start, size_t len, const char *file, in
 
 int		my_free(void *ptr);
 void	my_strdel(char **ptr);
+void    my_memdel(void **ptr);
 void	leaks();
 
 #endif
