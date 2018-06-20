@@ -72,13 +72,13 @@ char	*my_ft_strjoin(char *s1, char *s2, const char *file, int line, const char *
 	return (p);
 }
 
-//void	*my_ft_memalloc(size_t size, const char *file, int line, const char *func)
-//{
-//	void *p = ft_memalloc(size);
-//	printf("Need to Free: %s, %i, %s, %p[%li]\n", file, line, func, p, size);
-//	jfj_push_front(&list, size, file, line, func, p);
-//	return (p);
-//}
+void	*my_ft_memalloc(size_t size, const char *file, int line, const char *func)
+{
+	void *p = ft_memalloc(size);
+	printf("Need to Free: %s, %i, %s, %p[%li]\n", file, line, func, p, size);
+	jfj_push_front(&list, size, file, line, func, p);
+	return (p);
+}
 
 /***********************************************************************/
 /* YOU SHOULD NOT NEED TO GO BELOW JUST TO USE. FEEL FREE TO CONTINUE  */
